@@ -1,0 +1,272 @@
+/* ========== 基础变量 / Base Tokens ========== */
+:root{
+  --space-1:.5rem; --space-2:1rem; --space-3:1.5rem;
+  --radius:20px;
+  --max-text:68ch;                
+  --brand:#00274C;        
+  --accent:#6b5400;                
+  --ink:#111; --ink-muted:#475569; 
+  --surface:#fff; --surface-2:#f6f7fb;
+  --line:#8fb1f4;
+  --brand2:#fff8dc;             
+}
+
+
+/* skip to main */
+.skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding:.5rem, .75rem;
+  background: #fff;
+  border: 2px solid var(--brand);
+  z-index: 1000;
+}
+
+
+/* ========== 全局排版 / Global ========== */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.8;
+  color: #1a1a1a;
+  background: var(--surface);
+}
+
+p {
+  margin-block: 1rem;
+}
+ul, ol {
+  margin-block: 1rem;
+  padding-left: 1.5rem;
+}
+li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+main {
+  padding: var(--space-2);
+  margin-inline: auto;
+  max-width: var(--max-text);
+}
+
+a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--brand);         
+  background-color: var(--surface-2); 
+  transition: all 0.3s ease;
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+/* headings */
+h1, h2, h3, h4 {
+  font-family: "Segoe UI Semibold", Roboto, Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--brand);
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+h2 {
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: .5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--brand);
+}
+h3 {
+  font-size: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+h4 {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+strong {
+  font-weight: 600;
+  color: var(--brand);
+}
+
+/* header+nav */
+.site-header {
+  border-bottom: 5px solid var(--line);
+  background: var(--brand);
+}
+.brand-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:var(--space-2);
+  padding:var(--space-2);
+}
+.brand{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:44px;
+  height:auto;
+
+}
+
+.site-title{ 
+  display: flex;
+  justify-content: center;
+  font-size:1.1rem; 
+  margin:0; 
+  color:var(--surface);
+}
+
+.primary-nav ul{
+  list-style:none; 
+  margin:0; 
+  padding: var(--space-1) var(--space-2);
+  display:flex; 
+  flex-wrap:wrap;
+  justify-content: center;
+  gap:.5rem .6rem; 
+  overflow:auto;
+}
+.primary-nav a{
+  display:block; 
+  padding:.6rem .9rem; 
+  border-radius:999px;
+  background:var(--brand); 
+  color:var(--surface);
+  border:1px solid var(--surface);
+  line-height: 1;
+  white-space:nowrap;
+}
+.primary-nav a[aria-current="page"]{
+  font-weight:700; 
+  outline:2px solid currentColor;
+}
+
+/* ========== 版心与标题 ========== */
+section > h2{
+  margin-top: var(--space-2); 
+  font-size: 1.5rem; 
+  text-align:center;
+}
+aside{ 
+  margin-top: var(--space-2); 
+}
+section>h3{
+  margin-top: var(--space-2); 
+  margin-bottom: var(--space-1); 
+  font-size:1.3rem; 
+  text-align:left;
+}
+
+/* ========== 卡片 / Cards ========== */
+.card{
+  background:#fff; 
+  border:1px solid var(--line); 
+  border-radius: var(--radius);
+  padding: var(--space-2); 
+  margin-block: var(--space-2);
+}
+.card h3{ margin-bottom:.25rem; }
+
+/* ========== 首页按钮宫格（Grid #1） ========== */
+.grid-buttons{
+  display:grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  gap: var(--space-2);
+  margin-block: var(--space-2);
+}
+.grid-buttons a{
+  display:block; 
+  padding:1rem; 
+  border-radius: var(--radius);
+  background:#fdfeff; 
+  border:1px solid var(--line); 
+  color:var(--ink);
+}
+/* ====== resume:resources+FAQ ========== */
+.resume-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap:var(--space-2);
+}
+
+/* ========== 资源列表：两维布局（Grid #2） ========== */
+.resource-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:var(--space-2);
+}
+
+/* @supports (grid-template-columns: repeat(2, 1fr)){
+  .resource-grid{ grid-template-columns: repeat(2, 1fr); }
+} */
+
+.resource{
+  background:#fff; 
+  border:1px solid var(--line); 
+  border-radius: var(--radius);
+  padding: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+
+.resume-grid > .card,
+.resource-grid > li.resource{
+  margin: 0;
+}
+
+.media{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap:var(--space-2);
+}
+.media-img{
+  width:100%; 
+  height:auto; 
+  border-radius: var(--radius);
+  display:block;
+}
+.media-body>h2{
+  text-align:left;
+  margin-top:0;
+}
+
+/* ========== 图片与视频（自适应） ========== */
+img, iframe{ max-width:100%; height:auto; border:0; }
+
+/* ========== 页脚 ========== */
+.site-footer{
+  border-top:1px solid var(--line); 
+  padding: var(--space-2);
+  color:var(--ink-muted); 
+  text-align:center; 
+  margin-top: var(--space-3);
+}
+
+/* ========== 减少动画（尊重系统设置） ========== */
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
+}
