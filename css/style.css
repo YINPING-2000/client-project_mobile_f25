@@ -1,4 +1,4 @@
-/* ========== 基础变量 / Base Tokens ========== */
+ /* 基础变量  */
 :root{
   --space-1:.5rem; --space-2:1rem; --space-3:1.5rem;
   --radius:20px;
@@ -15,24 +15,24 @@
 /* skip to main */
 .skip {
   position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  top: -10000px;
+  /* top: auto; */
+  /* width: 1px; */
+  /* height: 1px; */
+  /* overflow: hidden; */
 }
 .skip:focus {
-  position: static;
-  width: auto;
-  height: auto;
+  top:20px;
+  /* width: auto; */
+  /* height: auto; */
   padding:.5rem, .75rem;
   background: #fff;
   border: 2px solid var(--brand);
-  z-index: 1000;
+  /* z-index: 1000; */
 }
 
 
-/* ========== 全局排版 / Global ========== */
+/* 全局排版  */
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   line-height: 1.8;
@@ -166,7 +166,7 @@ strong {
   outline:2px solid currentColor;
 }
 
-/* ========== 版心与标题 ========== */
+/* 版心与标题 */
 section > h2{
   margin-top: var(--space-2); 
   font-size: 1.5rem; 
@@ -182,7 +182,7 @@ section>h3{
   text-align:left;
 }
 
-/* ========== 卡片 / Cards ========== */
+/* 卡片 */
 .card{
   background:#fff; 
   border:1px solid var(--line); 
@@ -192,7 +192,7 @@ section>h3{
 }
 .card h3{ margin-bottom:.25rem; }
 
-/* ========== 首页按钮宫格（Grid #1） ========== */
+/* 首页按钮格 */
 .grid-buttons{
   display:grid; 
   grid-template-columns: repeat(2, 1fr); 
@@ -207,23 +207,19 @@ section>h3{
   border:1px solid var(--line); 
   color:var(--ink);
 }
-/* ====== resume:resources+FAQ ========== */
+/* resume:resources+FAQ */
 .resume-grid{
   display:grid;
   grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
   gap:var(--space-2);
 }
 
-/* ========== 资源列表：两维布局（Grid #2） ========== */
+/* 资源列表 grid*/
 .resource-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:var(--space-2);
 }
-
-/* @supports (grid-template-columns: repeat(2, 1fr)){
-  .resource-grid{ grid-template-columns: repeat(2, 1fr); }
-} */
 
 .resource{
   background:#fff; 
@@ -254,10 +250,10 @@ section>h3{
   margin-top:0;
 }
 
-/* ========== 图片与视频（自适应） ========== */
+/* 图片视频自适应 */
 img, iframe{ max-width:100%; height:auto; border:0; }
 
-/* ========== 页脚 ========== */
+/* footer */
 .site-footer{
   border-top:1px solid var(--line); 
   padding: var(--space-2);
@@ -266,7 +262,7 @@ img, iframe{ max-width:100%; height:auto; border:0; }
   margin-top: var(--space-3);
 }
 
-/* ========== 减少动画（尊重系统设置） ========== */
+/* 减少动画 */
 @media (prefers-reduced-motion: reduce){
   *{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
 }
